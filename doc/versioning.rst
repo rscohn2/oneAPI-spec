@@ -87,9 +87,9 @@ Provisional versions
 
 A specification version becomes final when it is approved. Before
 approval a specification version must be labeled provisional when
-published.  Only the revision is updated in a series of provisional
-specifications, even if there are breaking changes.  Implementations
-may provide features in provisional specifications before approval.
+published.  A provision spec will have a series of revisions until
+approval.  Implementations may provide features in provisional
+specifications before approval.
 
 | oneMKL 1.1 provisional rev 1
 | oneMKL 1.1 provisional rev 2
@@ -99,5 +99,6 @@ may provide features in provisional specifications before approval.
 Specification version approval
 ==============================
 
-Decided by core team.
-
+Element specifications must be approved by its core team as well as
+oneAPI spec core team. Overall spec requires approval of its core
+team. Leads can approve updates which only change the revision.

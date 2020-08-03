@@ -1,15 +1,15 @@
 Roles
 =====
 
-Each oneAPI element has a core team and lead who are the primary
+Each oneAPI element has a **core team** and **lead** who are the primary
 authors for the specification. The community is invited to make
 feature requests or proposals, which are reviewed by the core team.
 
-The overall specification also has a core team and lead. The oneAPI
-core team is responsible for issues that involve multiple oneAPI
+The overall specification also has a core team and lead. The **oneAPI
+core team** is responsible for issues that involve multiple oneAPI
 elements and provides general oversight.
 
-Technical advisory boards review topics related to specifications and
+**Technical advisory boards** review topics related to specifications and
 provide feedback. There may be overlap between core team and technical
 advisory board.
 
