@@ -1,4 +1,4 @@
 FROM ubuntu
-COPY install.sh requirements.txt /tmp/
+COPY ubuntu-packages.txt install.sh requirements.txt /tmp/
 RUN cd /tmp && ./install.sh
 

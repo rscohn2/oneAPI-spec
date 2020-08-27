@@ -1,4 +1,8 @@
+bison
+build-essential
+cmake
 enchant
+flex
 git
 graphviz
 imagemagick
