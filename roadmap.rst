@@ -8,7 +8,7 @@ Schedule
 =========================   ==========  ===========
 Version                     Date        Notes
 =========================   ==========  ===========
-0.5_                        11/17/2019  First Public Release
+0.5                         11/17/2019  First Public Release
 0.6_                        01/30/2020  Open source Release
 0.7_                        03/26/2020  50% content
 0.8_                        05/28/2020  80% content
