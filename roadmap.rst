@@ -18,15 +18,15 @@ Version                     Date        Notes
 `Provisional 1.1 Rev 1`_    12/17/2020  
 `Provisional 1.1 Rev 2`_    03/25/2021
 `Provisional 1.1 Rev 3`_    06/24/2021
-`1.1_ Rev 1`_               09/23/2021
+`1.1 Rev 1`_                09/23/2021
 =========================   ==========  ===========
 
 Details:
 ========
 
 
-0.6.0
------
+0.6
+---
 
 We will publish:
 
@@ -112,8 +112,8 @@ feedback.
     - API document inline    
     - rst sources included in oneapi-spec repo
 
-0.7.0
------
+0.7
+---
 
 Summary
 +++++++
@@ -182,8 +182,8 @@ Date       Milestone
   - Sections that apply to all domains
   - subset of domains with high-level description and APIs, as determined by open source schedule
   
-0.8.0
------
+0.8
+---
 
 Summary
 +++++++
@@ -266,8 +266,8 @@ Date       Milestone
 6/26/2020  Release
 =========  ==========
 
-0.9.0
------
+0.9
+---
 
 Summary
 +++++++
@@ -330,8 +330,8 @@ Elements
 
   - finalize FFT, sparse BLAS, RNG, and VM domains
   
-1.0.0
------
+1.0
+---
 
 Summary
 +++++++
@@ -362,5 +362,6 @@ Provisional 1.1 Rev 2
 Provisional 1.1 Rev 3
 ---------------------
 
-1.1_ Rev 1
-----------
+1.1 Rev 1
+---------
+
