@@ -5,17 +5,21 @@
 Schedule
 ========
 
-========   ==========  ===========
-Version    Date        Notes
-========   ==========  ===========
-0.5.0      11/17/2019  First Public Release
-0.6.0_     01/30/2020  Open source Release
-0.7.0_     03/26/2020  50% content
-0.8.0_     05/28/2020  80% content
-0.8.5_     06/26/2020  85% content
-0.9.0_     07/30/2020  Final Gold Preview
-1.0.0_     10/29/2020  Gold Release
-========   ==========  ===========
+=========================   ==========  ===========
+Version                     Date        Notes
+=========================   ==========  ===========
+0.5_                        11/17/2019  First Public Release
+0.6_                        01/30/2020  Open source Release
+0.7_                        03/26/2020  50% content
+0.8_                        05/28/2020  80% content
+0.8_                        06/26/2020  85% content
+0.9_                        07/30/2020  Final Gold Preview
+1.0_                        10/29/2020  Gold Release
+`Provisional 1.1 Rev 1`_    12/17/2020  
+`Provisional 1.1 Rev 2`_    03/25/2021
+`Provisional 1.1 Rev 3`_    06/24/2021
+`1.1_ Rev 1`_               09/23/2021
+=========================   ==========  ===========
 
 Details:
 ========
@@ -349,3 +353,14 @@ Date       Milestone
 
   - Minor cleanup and integration of remaining feedback if any
 
+Provisional 1.1 Rev 1
+---------------------
+
+Provisional 1.1 Rev 2
+---------------------
+
+Provisional 1.1 Rev 3
+---------------------
+
+1.1_ Rev 1
+----------
