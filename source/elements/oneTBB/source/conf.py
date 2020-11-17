@@ -18,12 +18,16 @@
 #
 import os
 import sys
+import json
+
+with open('../../../../oneapi-doc.json') as fin:
+    cfg = json.load(fin)
+
+# Add this conf and the shared conf files to the path
 sys.path.insert(0, os.path.abspath(os.path.join('..','..','..','conf')))
-# element_conf needs to import this conf
 sys.path.insert(0, os.path.abspath('.'))
 
 project = 'oneTBB'
-
 from element_conf import *
 
 exclude_patterns = ['nested-*.rst',

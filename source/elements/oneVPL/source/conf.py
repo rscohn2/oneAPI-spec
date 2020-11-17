@@ -18,14 +18,29 @@
 #
 import os
 import sys
+import json
+
+# Add this conf and the shared conf files to the path
 sys.path.insert(0, os.path.abspath(os.path.join('..','..','..','conf')))
-# element_conf needs to import this conf
 sys.path.insert(0, os.path.abspath('.'))
+
+with open('../../../../oneapi-doc.json') as fin:
+    cfg = json.load(fin)
 
 project = 'oneVPL'
 
-from element_conf import *
+# import these will populate conf namespace
+import element_conf
+import common_conf
 
 cpp_id_attributes = ['MFX_CDECL']
 
 c_id_attributes = ['MFX_CDECL']
+
+setup = common_conf.setup
+
+import traceback
+
+traceback.print_stack()
+print('Here:', __file__)
+print('Extensions:', extensions)

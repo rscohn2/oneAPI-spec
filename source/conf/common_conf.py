@@ -2,11 +2,11 @@
 #
 # SPDX-License-Identifier: MIT
 
-import json
 import os
 import string
 import sys
 
+import conf
 import docutils
 
 
@@ -20,7 +20,7 @@ def path_relative_to_repo_root(relative_path):
 # Extend path to let Sphinx find `dalapi` module:
 sys.path.insert(0, path_relative_to_repo_root('source/elements/oneDAL'))
 
-extensions = [
+conf.extensions = [
     'notfound.extension',
     'sphinx.ext.autodoc',
     'sphinx.ext.doctest',
@@ -39,12 +39,9 @@ extensions = [
     'dalapi',  # oneDAL API generator
 ]
 
-with open('../oneapi-doc.json') as fin:
-    cfg = json.load(fin)
-
 env = {
-    'oneapi_version': cfg['version'],
-    'vpl_spec_version': cfg['vpl_version'],
+    'oneapi_version': conf.cfg['version'],
+    'vpl_spec_version': conf.cfg['vpl_version'],
 }
 
 prolog_template = string.Template(
@@ -72,19 +69,19 @@ prolog_template = string.Template(
 .. |regsup| replace:: :supsub:`reg`
 .. |intel_r| replace:: Intel\ :supsub:`reg`
 .. |msdk_full_name| replace:: Intel\ :supsub:`reg`"""
-    + 'Media Software Development Kit'
+    + ' Media Software Development Kit'
 )
 
-rst_prolog = prolog_template.substitute(env)
+conf.rst_prolog = prolog_template.substitute(env)
 
 
 # for substitutions in code blocks and sphinx-prompts:
-substitutions = [('|dal_short_name|', 'oneDAL'), ('|daal_in_code|', 'daal')]
+conf.substitutions = [('|dal_short_name|', 'oneDAL'), ('|daal_in_code|', 'daal')]
 
 
-primary_domain = 'cpp'
+conf.primary_domain = 'cpp'
 
-latex_elements = {
+conf.latex_elements = {
     'preamble': r'''
 \usepackage{makeidx}
 \usepackage[columns=1]{idxlayout}

@@ -12,6 +12,7 @@
 
 # -- Path setup --------------------------------------------------------------
 
+import json
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
@@ -19,9 +20,11 @@
 import os
 import sys
 
-sys.path.insert(0, os.path.abspath('conf'))
+with open('../oneapi-doc.json') as fin:
+    cfg = json.load(fin)
+sys.path.insert(0, os.path.abspath('.'))
 
-from common_conf import *
+from common_conf import *  # noqa F403,E402
 
 # -- Project information -----------------------------------------------------
 
@@ -30,7 +33,7 @@ copyright = u'2020, Intel Corporation'
 author = u'Intel'
 
 # The short X.Y version
-version = env['oneapi_version']
+version = common_conf.env['oneapi_version']
 # The full version, including alpha/beta/rc tags
 release = version
 
