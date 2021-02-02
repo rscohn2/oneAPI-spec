@@ -1,3 +1,7 @@
+.. SPDX-FileCopyrightText: 2019-2020 Intel Corporation
+..
+.. SPDX-License-Identifier: CC-BY-4.0
+
 .. _onemkl_dft_compute_forward:
 
 compute_forward
@@ -9,7 +13,7 @@ This function computes the forward transform defined by an instantiation of the 
 
 .. rubric:: Description
 
-The compute_forward function accepts the :ref:`onemkl_dft_descriptor` and one or more data parameters and in the case of USM data, any ``syc::event`` dependencies.  Given a succesfully configured and committed descriptor, this function computes the forward transform, that is, the :ref:`transform<onemkl_dft_formula>` with the minus sign, :math:`\delta=-1`, in the exponent.
+The compute_forward function accepts the :ref:`onemkl_dft_descriptor` and one or more data parameters and in the case of USM data, any ``syc::event`` dependencies.  Given a successfully configured and committed descriptor, this function computes the forward transform, that is, the :ref:`transform<onemkl_dft_formula>` with the minus sign, :math:`\delta=-1`, in the exponent.
 
 The configuration parameters ``config_param::COMPLEX_STORAGE``, ``config_param::REAL_STORAGE`` and ``config_param::CONJUGATE_EVEN_STORAGE`` define the layout of the input and output data and must be properly set in a call to :ref:`onemkl_dft_descriptor_set_value`.
 
@@ -28,8 +32,8 @@ compute_forward (Buffer version)
 
    namespace oneapi::mkl::dft {
 
-      template <typename data_type, typename descriptor>
-      void compute_forward( descriptor                 &desc,
+      template <typename descriptor_type, typename data_type>
+      void compute_forward( descriptor_type            &desc,
                             sycl::buffer<data_type, 1> &inout);
 
    }
@@ -41,8 +45,8 @@ compute_forward (Buffer version)
 
    namespace oneapi::mkl::dft {
 
-      template <typename data_type, typename descriptor>
-      void compute_forward( descriptor                 &desc,
+      template <typename descriptor_type typename data_type>
+      void compute_forward( descriptor_type            &desc,
                             sycl::buffer<data_type, 1> &inout_re,
                             sycl::buffer<data_type, 1> &inout_im);
    }
@@ -54,8 +58,8 @@ compute_forward (Buffer version)
 
    namespace oneapi::mkl::dft {
    
-      template <typename input_type, typename output_type, typename descriptor>
-      void compute_forward( descriptor                   &desc,
+      template <typename descriptor_type, typename input_type, typename output_type>
+      void compute_forward( descriptor_type              &desc,
                             sycl::buffer<input_type, 1>  &in,
                             sycl::buffer<output_type, 1> &out);
    }
@@ -66,8 +70,8 @@ compute_forward (Buffer version)
 
    namespace oneapi::mkl::dft {
 
-      template <typename input_type, typename output_type, typename descriptor>
-      void compute_forward( descriptor                   &desc,
+      template <typename descriptor_type, typename input_type, typename output_type>
+      void compute_forward( descriptor_type              &desc,
                             sycl::buffer<input_type, 1>  &in_re,
                             sycl::buffer<input_type, 1>  &in_im,
                             sycl::buffer<output_type, 1> &out_re,
@@ -151,8 +155,8 @@ compute_forward (USM version)
 
    namespace oneapi::mkl::dft {
    
-      template <typename data_type, typename descriptor>
-      sycl::event compute_forward( descriptor                                    &desc,
+      template <typename descriptor_type, typename data_type>
+      sycl::event compute_forward( descriptor_type                               &desc,
                                    data_type                                     *inout,
                                    const cl::sycl::vector_class<cl::sycl::event> &dependencies = {});
    }
@@ -164,8 +168,8 @@ compute_forward (USM version)
 
    namespace oneapi::mkl::dft {
       
-      template <typename data_type, typename descriptor>
-      sycl::event compute_forward(descriptor                                    &desc,
+      template <typename descriptor_type, typename data_type>
+      sycl::event compute_forward(descriptor_type                               &desc,
                                   data_type                                     *inout_re,
                                   data_type                                     *inout_im,
                                   const cl::sycl::vector_class<cl::sycl::event> &dependencies = {});
@@ -182,8 +186,8 @@ compute_forward (USM version)
 
    namespace oneapi::mkl::dft {
       
-      template <typename input_type, typename output_type, typename descriptor>
-      sycl::event compute_forward( descriptor                                    &desc,
+      template <typename descriptor_type, typename input_type, typename output_type>
+      sycl::event compute_forward( descriptor_type                               &desc,
                                    input_type                                    *in,
                                    output_type                                   *out,
                                    const cl::sycl::vector_class<cl::sycl::event> &dependencies = {});
@@ -197,8 +201,8 @@ compute_forward (USM version)
 
    namespace oneapi::mkl::dft {
       
-      template <typename input_type, typename output_type, typename descriptor>
-      sycl::event compute_forward( descriptor                                    &desc,
+      template <typename descriptor_type, typename input_type, typename output_type>
+      sycl::event compute_forward( descriptor_type                               &desc,
                                    input_type                                    *in_re,
                                    input_type                                    *in_im,
                                    output_type                                   *out_re,

@@ -1,3 +1,7 @@
+.. SPDX-FileCopyrightText: 2019-2020 Intel Corporation
+..
+.. SPDX-License-Identifier: CC-BY-4.0
+
 =================================
 oneVPL for |msdk_full_name| Users
 =================================
@@ -39,6 +43,7 @@ New oneVPL dispatcher functions:
 New oneVPL memory management functions:
 
 - :cpp:func:`MFXMemory_GetSurfaceForVPP`
+- :cpp:func:`MFXMemory_GetSurfaceForVPPOut`
 - :cpp:func:`MFXMemory_GetSurfaceForEncode`
 - :cpp:func:`MFXMemory_GetSurfaceForDecode`
 
@@ -83,6 +88,9 @@ included in oneVPL:
 - **Multi-frame encode.** A set of external buffers to combine several frames
   into one encoding call. This feature was removed because it is device specific
   and not commonly used.
+
+- **Surface Type Neutral Transcoding.** Opaque memory support is removed and 
+  replaced with internal memory allocation concept.   
 
 -----------------------------------------
 |msdk_full_name| API Removals
@@ -147,6 +155,12 @@ The following |msdk_full_name| functions are not included in oneVPL:
 - **Video processing functions**
 
   - MFXVideoVPP_RunFrameVPPAsyncEx()
+
+- **Memory type and IOPattern enumerations**
+  
+  - MFX_IOPATTERN_IN_OPAQUE_MEMORY
+  - MFX_IOPATTERN_OUT_OPAQUE_MEMORY
+  - MFX_MEMTYPE_OPAQUE_FRAME
 
 .. important:: Corresponding extension buffers are also removed.
 

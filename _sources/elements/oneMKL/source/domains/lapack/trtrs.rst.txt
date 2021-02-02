@@ -1,3 +1,7 @@
+.. SPDX-FileCopyrightText: 2019-2020 Intel Corporation
+..
+.. SPDX-License-Identifier: CC-BY-4.0
+
 .. _onemkl_lapack_trtrs:
 
 trtrs
@@ -205,7 +209,7 @@ b
    Overwritten by the solution matrix :math:`X`.
 
 scratchpad
-   Pointer toscratchpad memory to be used by routine for storing intermediate results.
+   Pointer to scratchpad memory to be used by routine for storing intermediate results.
 
 .. container:: section
 

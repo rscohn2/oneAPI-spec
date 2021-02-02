@@ -1,3 +1,7 @@
+.. SPDX-FileCopyrightText: 2019-2020 Intel Corporation
+..
+.. SPDX-License-Identifier: CC-BY-4.0
+
 .. _func_video_vpp:
 
 ========
@@ -72,4 +76,10 @@ MFXVideoVPP_RunFrameVPPAsync
 .. doxygenfunction:: MFXVideoVPP_RunFrameVPPAsync
    :project: oneVPL
 
-.. important:: The :cpp:func:`MFXVideoVPP_RunFrameVPPAsync` function is mandatory when implementing a VPP filter.
+MFXVideoVPP_ProcessFrameAsync
+-----------------------------
+
+.. doxygenfunction:: MFXVideoVPP_ProcessFrameAsync
+   :project: oneVPL
+
+.. important:: Either :cpp:func:`MFXVideoVPP_RunFrameVPPAsync` or  :cpp:func:`MFXVideoVPP_ProcessFrameAsync` function is                  mandatory when implementing a VPP filter.

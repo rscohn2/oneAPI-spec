@@ -1,5 +1,6 @@
+.. SPDX-FileCopyrightText: 2019-2020 Intel Corporation
 ..
-  Copyright 2020 Intel Corporation
+.. SPDX-License-Identifier: CC-BY-4.0
 
 .. _l0-section:
 
@@ -41,5 +42,6 @@ architectures, such as FPGAs.
 Detailed API Descriptions
 -------------------------
 
-The detailed specification can be found online in the `Level Zero
-Specification`_.
+The detailed specification can be found online in the specification_.
+
+.. _specification: https://spec.oneapi.com/level-zero/latest/index.html

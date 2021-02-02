@@ -1,3 +1,7 @@
+.. SPDX-FileCopyrightText: 2019-2020 Intel Corporation
+..
+.. SPDX-License-Identifier: CC-BY-4.0
+
 .. _disp_api_struct:
 
 ==================================
@@ -59,6 +63,14 @@ mfxVPPDescription
 -----------------
 
 .. doxygenstruct:: mfxVPPDescription
+   :project: oneVPL
+   :members:
+   :protected-members:
+
+mfxAccelerationModeDescription
+------------------------------
+
+.. doxygenstruct:: mfxAccelerationModeDescription
    :project: oneVPL
    :members:
    :protected-members:

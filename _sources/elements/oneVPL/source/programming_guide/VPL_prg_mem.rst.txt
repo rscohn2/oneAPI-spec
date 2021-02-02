@@ -1,3 +1,7 @@
+.. SPDX-FileCopyrightText: 2019-2020 Intel Corporation
+..
+.. SPDX-License-Identifier: CC-BY-4.0
+
 .. _mem-alloc-ext-alloc:
 
 =========================================
@@ -57,6 +61,8 @@ In the internal memory management model, oneVPL provides interface functions for
 frames allocation:
 
 - :cpp:func:`MFXMemory_GetSurfaceForVPP`
+
+- :cpp:func:`MFXMemory_GetSurfaceForVPPOut`
 
 - :cpp:func:`MFXMemory_GetSurfaceForEncode`
 

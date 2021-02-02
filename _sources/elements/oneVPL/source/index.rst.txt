@@ -1,5 +1,6 @@
+.. SPDX-FileCopyrightText: 2019-2020 Intel Corporation
 ..
-  Copyright 2020 Intel Corporation
+.. SPDX-License-Identifier: CC-BY-4.0
 
 .. _oneVPL-section:
 
@@ -14,6 +15,12 @@ media centric and video analytics workloads and API primitives for zero-copy
 buffer sharing. oneVPL is backwards and cross-architecture compatible to ensure
 optimal execution on current and next generation hardware without source code
 changes.
+
+============================
+oneVPL Specification Version
+============================
+
+Latest oneVPL specification version is |vpl_version|. 
 
 .. toctree::
    :titlesonly:

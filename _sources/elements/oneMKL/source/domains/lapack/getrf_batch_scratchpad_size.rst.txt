@@ -1,3 +1,7 @@
+.. SPDX-FileCopyrightText: 2019-2020 Intel Corporation
+..
+.. SPDX-License-Identifier: CC-BY-4.0
+
 .. _onemkl_lapack_getrf_batch_scratchpad_size:
 
 getrf_batch_scratchpad_size
@@ -46,7 +50,7 @@ m
   Array of ``group_count`` parameters :math:`m_g` specifying the number of rows in the matrices belonging to group :math:`g`.
 
 n
-  Array of ``group_count`` parameters :math:`n_g` specifying the number of columns in matricex belonging to group :math:`g`.
+  Array of ``group_count`` parameters :math:`n_g` specifying the number of columns in matrices belonging to group :math:`g`.
 
 lda
   Array of ``group_count`` parameters :math:`\text{lda}_g` specifying the leading dimensions of matrices belonging to group :math:`g`.
