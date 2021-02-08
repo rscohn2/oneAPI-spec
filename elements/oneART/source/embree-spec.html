@@ -4346,7 +4346,7 @@ SPDX-License-Identifier: MIT
  </li>
  <li class="toctree-l1 current active collapsible-parent">
   <a class="reference internal" href="index.html">
-   oneART
+   Advanced Rendering
   </a>
   <ul class="current collapse-ul">
    <li class="toctree-l2 current active collapsible-parent">
@@ -4365,8 +4365,8 @@ SPDX-License-Identifier: MIT
         </a>
        </li>
        <li class="toctree-l4">
-        <a class="reference internal" href="#api-reference">
-         API Reference
+        <a class="reference internal" href="#embree-api">
+         Embree API
         </a>
        </li>
       </ul>
@@ -4605,8 +4605,8 @@ SPDX-License-Identifier: MIT
   </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#api-reference">
-   API Reference
+  <a class="reference internal nav-link" href="#embree-api">
+   Embree API
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
@@ -8386,8 +8386,8 @@ details.</p>
 [Performance Recommendations].</p>
 </div>
 </div>
-<div class="section" id="api-reference">
-<h1>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="embree-api">
+<h1>Embree API<a class="headerlink" href="#embree-api" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="rtcnewdevice">
 <h2>rtcNewDevice<a class="headerlink" href="#rtcnewdevice" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="name">
@@ -8450,10 +8450,10 @@ CPUs, and enabled by default on Xeon Phi Processors.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">start_threads=[0/1]</span></code>: When enabled, the build threads are started
 upfront. This can be useful for benchmarking to exclude thread
 creation time. This option is disabled by default.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">isa=[sse2,sse4.2,avx,avx2,avx512knl,avx512skx]</span></code>: Use specified
-ISA. By default the ISA is selected automatically.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">max_isa=[sse2,sse4.2,avx,avx2,avx512knl,avx512skx]</span></code>: Configures
-the automated ISA selection to use maximally the specified ISA.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">isa=[sse2,sse4.2,avx,avx2,avx512]</span></code>: Use specified ISA. By default
+the ISA is selected automatically.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max_isa=[sse2,sse4.2,avx,avx2,avx512]</span></code>: Configures the automated
+ISA selection to use maximally the specified ISA.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">hugepages=[0/1]</span></code>: Enables or disables usage of huge pages. Under
 Linux huge pages are used by default but under Windows and macOS they
 are disabled by default.</p></li>
@@ -8624,9 +8624,8 @@ if Embree is compiled with <code class="docutils literal notranslate"><span clas
 <li><p><code class="docutils literal notranslate"><span class="pre">RTC_DEVICE_PROPERTY_NATIVE_RAY16_SUPPORTED</span></code>: Queries whether the
 <code class="docutils literal notranslate"><span class="pre">rtcIntersect16</span></code> and <code class="docutils literal notranslate"><span class="pre">rtcOccluded16</span></code> functions preserve packet
 size and ray order when invoking callback functions. This is only the
-case if Embree is compiled with <code class="docutils literal notranslate"><span class="pre">EMBREE_RAY_PACKETS</span></code> and
-<code class="docutils literal notranslate"><span class="pre">AVX512SKX</span></code> (or <code class="docutils literal notranslate"><span class="pre">AVX512KNL</span></code>) enabled, and if the machine it is
-running on supports <code class="docutils literal notranslate"><span class="pre">AVX512SKX</span></code> (or <code class="docutils literal notranslate"><span class="pre">AVX512KNL</span></code>).</p></li>
+case if Embree is compiled with <code class="docutils literal notranslate"><span class="pre">EMBREE_RAY_PACKETS</span></code> and <code class="docutils literal notranslate"><span class="pre">AVX512</span></code>
+enabled, and if the machine it is running on supports <code class="docutils literal notranslate"><span class="pre">AVX512</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">RTC_DEVICE_PROPERTY_RAY_STREAM_SUPPORTED</span></code>: Queries whether
 <code class="docutils literal notranslate"><span class="pre">rtcIntersect1M</span></code>, <code class="docutils literal notranslate"><span class="pre">rtcIntersect1Mp</span></code>, <code class="docutils literal notranslate"><span class="pre">rtcIntersectNM</span></code>,
 <code class="docutils literal notranslate"><span class="pre">rtcIntersectNp</span></code>, <code class="docutils literal notranslate"><span class="pre">rtcOccluded1M</span></code>, <code class="docutils literal notranslate"><span class="pre">rtcOccluded1Mp</span></code>,
@@ -13300,10 +13299,10 @@ direction vector (<code class="docutils literal notranslate"><span class="pre">d
 segment (<code class="docutils literal notranslate"><span class="pre">tnear</span></code> and <code class="docutils literal notranslate"><span class="pre">tfar</span></code> members). The ray direction does not
 have to be normalized, and only the parameter range specified by the
 <code class="docutils literal notranslate"><span class="pre">tnear</span></code>/<code class="docutils literal notranslate"><span class="pre">tfar</span></code> interval is considered valid.</p>
-<p>The ray segment must be in the range <span class="math notranslate nohighlight">\([0, /infty]\)</span>, thus ranges that
-start behind the ray origin are not allowed, but ranges can reach to
-infinity. For rays inside a ray stream, <code class="docutils literal notranslate"><span class="pre">tfar</span></code> &lt; <code class="docutils literal notranslate"><span class="pre">tnear</span></code> identifies
-an inactive ray.</p>
+<p>The ray segment must be in the range <span class="math notranslate nohighlight">\([0, \infty]\)</span>, thus ranges
+that start behind the ray origin are not allowed, but ranges can reach
+to infinity. For rays inside a ray stream, <code class="docutils literal notranslate"><span class="pre">tfar</span></code> &lt; <code class="docutils literal notranslate"><span class="pre">tnear</span></code>
+identifies an inactive ray.</p>
 <p>The ray further contains a motion blur time in the range <span class="math notranslate nohighlight">\([0, 1]\)</span>
 (<code class="docutils literal notranslate"><span class="pre">time</span></code> member), a ray mask (<code class="docutils literal notranslate"><span class="pre">mask</span></code> member), a ray ID (<code class="docutils literal notranslate"><span class="pre">id</span></code>
 member), and ray flags (<code class="docutils literal notranslate"><span class="pre">flags</span></code> member). The ray mask can be used to
@@ -13692,8 +13691,8 @@ scene contains motion blur geometries, also the ray time (<code class="docutils 
 member) must be initialized to a value in the range <span class="math notranslate nohighlight">\([0, 1]\)</span>. If
 ray masks are enabled at compile time, the ray mask (<code class="docutils literal notranslate"><span class="pre">mask</span></code> ray
 member) must be initialized as well. The ray segment has to be in the
-range <span class="math notranslate nohighlight">\([0, \infty]\)</span>, thus ranges that start behind the ray origin are
-not valid, but ranges can reach to infinity. See Section
+range <span class="math notranslate nohighlight">\([0, \infty]\)</span>, thus ranges that start behind the ray origin
+are not valid, but ranges can reach to infinity. See Section
 <a class="reference external" href="#rtcray">RTCRay</a> for the ray layout description.</p>
 <p>The geometry ID (<code class="docutils literal notranslate"><span class="pre">geomID</span></code> hit member) of the hit data must be
 initialized to <code class="docutils literal notranslate"><span class="pre">RTC_INVALID_GEOMETRY_ID</span></code> (-1).</p>
@@ -13776,8 +13775,8 @@ the scene contains motion blur geometries, also the ray time (<code class="docut
 ray member) must be initialized to a value in the range <span class="math notranslate nohighlight">\([0, 1]\)</span>.
 If ray masks are enabled at compile time, the ray mask (<code class="docutils literal notranslate"><span class="pre">mask</span></code> ray
 member) must be initialized as well. The ray segment must be in the
-range <span class="math notranslate nohighlight">\([0, /infty]\)</span>, thus ranges that start behind the ray origin are
-not valid, but ranges can reach to infinity. See Section
+range <span class="math notranslate nohighlight">\([0, \infty]\)</span>, thus ranges that start behind the ray origin
+are not valid, but ranges can reach to infinity. See Section
 <a class="reference external" href="#rtcray">RTCRay</a> for the ray layout description.</p>
 <p>When no intersection is found, the ray data is not updated. In case a
 hit was found, the <code class="docutils literal notranslate"><span class="pre">tfar</span></code> component of the ray is set to <code class="docutils literal notranslate"><span class="pre">-inf</span></code>.</p>
@@ -15026,8 +15025,8 @@ scale_x &amp; skew_{xy} &amp; skew_{xz} &amp; shift_x \\
 <p>where <span class="math notranslate nohighlight">\(\mathbf{i}\)</span>, <span class="math notranslate nohighlight">\(\mathbf{j}\)</span> <span class="math notranslate nohighlight">\(\mathbf{k}\)</span> are the
 imaginary quaternion units. The passed quaternion will be normalized
 internally.</p>
-<p>The affine transformation matrix corresponding to
-a <code class="docutils literal notranslate"><span class="pre">RTCQuaternionDecomposition</span></code> is <span class="math notranslate nohighlight">\(TRS\)</span> and a point
+<p>The affine transformation matrix corresponding to a
+<code class="docutils literal notranslate"><span class="pre">RTCQuaternionDecomposition</span></code> is <span class="math notranslate nohighlight">\(TRS\)</span> and a point
 <span class="math notranslate nohighlight">\(p = (p_x, p_y, p_z, 1)^T\)</span> will be transformed as</p>
 <div class="math notranslate nohighlight">
 \[p' = T \ R \ S \ p.\]</div>
